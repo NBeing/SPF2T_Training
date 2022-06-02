@@ -13,7 +13,6 @@ globals = {
             currentPattern = 0x0,
             gemsToDrop = 0x0
         }
-
     },
 }
 -- Hotkeys (set in menu)
@@ -32,7 +31,7 @@ input.registerhotkey(3, function()
     local currentPattern = globals.options.p1.currentPattern
     currentPattern = currentPattern + 1
     
-    if currentPattern > 0x0B then
+    if currentPattern > 0x0A then
         currentPattern = 0x00
     end
 
@@ -45,7 +44,7 @@ input.registerhotkey(4, function()
     local currentPattern = globals.options.p2.currentPattern
     currentPattern = currentPattern + 1
     
-    if currentPattern > 0x0B then
+    if currentPattern > 0x0A then
         currentPattern = 0x00
     end
 
@@ -96,7 +95,7 @@ function print_training_info()
 
 end
 
-emu.registerstart(function() -- Called after a frame is drawn
+emu.registerstart(function() -- Called when lua is started
     print_training_info()
 end)
 
